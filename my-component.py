@@ -18,7 +18,7 @@ class MyComponent(pulumi.ComponentResource):
             result_count=1,
             opts=pulumi.ResourceOptions(parent=self),
         )
-        self.greeting = pulumi.Output.concat(greeting_word.results[0], who, "!")
+        self.greeting = pulumi.Output.concat(greeting_word.results[0], ", ", who, "!")
         self.register_outputs({
             "greeting": self.greeting,
         })
