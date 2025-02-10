@@ -7,7 +7,7 @@ class MyComponentArgs(TypedDict):
     who: Optional[pulumi.Output[str]]
 
 class MyComponent(pulumi.ComponentResource):
-    greeting: Optional[pulumi.Output[str]]
+    greeting: pulumi.Output[str]
 
     def __init__(self, name: str, args: MyComponentArgs, opts: Optional[pulumi.ResourceOptions] = None):
         super().__init__("my-provider:index:MyComponent", name, {}, opts)
